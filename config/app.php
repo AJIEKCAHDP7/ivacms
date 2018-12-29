@@ -4,12 +4,13 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Application Name
+    | Application Name - Название приложения
     |--------------------------------------------------------------------------
     |
-    | This value is the name of your application. This value is used when the
-    | framework needs to place the application's name in a notification or
-    | any other location as required by the application or its packages.
+    |
+    | Это значение - название вашего приложения. Это значение используется, когда
+    | Фреймворк должен поместить имя приложения в уведомлении или
+    | любое другое место, как требуется приложением или его пакетами.
     |
     */
 
@@ -17,12 +18,13 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Application Environment
+    | Application Environment - Окружение приложения
     |--------------------------------------------------------------------------
     |
-    | This value determines the "environment" your application is currently
-    | running in. This may determine how you prefer to configure various
-    | services the application utilizes. Set this in your ".env" file.
+    |
+    | Это значение определяет "среду", в которой ваше приложение в настоящее время
+    | работает. Это может определить, как вы предпочитаете настраивать различные
+    | сервисы, которые использует приложение. Установите это в своем файле .env.
     |
     */
 
