@@ -1,3 +1,4 @@
+СПИСОК КОММАНД ДЛЯ РАБОТЫ С GIT ПРОЕКТОМ.
 1. git config --global user.name "Username" - Создание пользователя GIT.
 2. git config --global user.email "mail@mail.com" - Создание эл. почты GIT.
 3. git config -l - Просмотреть конфигурацию.
@@ -9,3 +10,7 @@
 9. git remote show - Отображение списка репозиториев для хранения кода.
 10. git remote add origin <link to your repository> - Добавление репозитория удалённого сервера.
 11. git push origin master - Загрузить проект на сервер в ветку master.
+12. git clone <link to repository> - Клонировать проект из репозитория.
+13. composer install - установка зависимостей всегда после клонирования проекта.
+14. git pull origin master - Если проект был обновлён, то не надо делать clone. 
+
