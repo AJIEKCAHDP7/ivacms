@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="173ae4e3-f8f8-41b6-bbad-59f3632e51d0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Helpers/LangHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/LangHelper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Middleware/LangMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/LangMiddleware.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/LangModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/LangModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/LangServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/LangServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,8 +30,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Middleware/LangMiddleware.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="586">
-              <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+            <state relative-caret-position="603">
+              <caret line="39" column="41" lean-forward="true" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
               <folding>
                 <element signature="e#39#51#0#PHP" expanded="true" />
               </folding>
@@ -395,12 +389,12 @@
       <workItem from="1545849751486" duration="22636000" />
       <workItem from="1545973511218" duration="15564000" />
       <workItem from="1546100739896" duration="11623000" />
-      <workItem from="1546140277355" duration="8649000" />
+      <workItem from="1546140277355" duration="8838000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87612000" />
+    <option name="totallyTimeSpent" value="87801000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -783,8 +777,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/LangMiddleware.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+        <state relative-caret-position="603">
+          <caret line="39" column="41" lean-forward="true" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
           <folding>
             <element signature="e#39#51#0#PHP" expanded="true" />
           </folding>

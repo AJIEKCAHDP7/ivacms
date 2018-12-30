@@ -32,32 +32,20 @@ class LangMiddleware
             $locale = $langhelper::checkAvailableLocale(Request::segment(1));
             $segments[0] = $locale;
             $langhelper->setAppLocale($locale);
+            // Сохраняем в сесию указанную локаль запроса
             Session::put('locale',$segments[0]);
         }
         else {
+            // Если есть локаль в сессии
             if (Session::has('locale')) {
                 $segments[0] = Session::get('locale');
             }
             else {
                 $segments[0] = App::getLocale();
             }
+            // Если в адресе не установлена локаль, делаем перенаправление на локаль
             return redirect(implode('/', $segments));
         }
-
-
-        // Если в сегменте локаль языка
-        $locale = $request->segment(1);
-        // Если нет локали нужной локали в массиме доступных
-        //  if (!in_array($locale, LangHelper::getLangsIdentif()->toArray())) {
-            // Сегменты запроса
-            $segments = $request->segments();
-            $segments[0] = App::getLocale();
-
-       //     return redirect(implode('/', $segments));
-        //   }
-        //session(['language'=>$locale]);
-
-     //   dump($langhelper->setLangLocale($request->segment(1)));
         return $next($request);
     }
 
