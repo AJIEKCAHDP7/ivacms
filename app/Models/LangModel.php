@@ -49,8 +49,9 @@ class LangModel extends Model
     }
 
     public static function getLangsFromCache() {
-       //return Cache::get('languages');
-        return self::getAllLangsFromDB();
+        return Cache::remember('languages', 15, function() {
+            return LangModel::get();
+        });
     }
 
 

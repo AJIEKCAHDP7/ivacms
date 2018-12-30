@@ -13,7 +13,7 @@
 
 
 // Группа маршрутов для локализации приложения
-Route::prefix(LangHelper::setCurrentLang())->middleware('web')->group(function() {
+Route::prefix(LangHelper::checkAvailableLocale(Request::segment(1)))->middleware('web')->group(function() {
 
     Route::get('/', function () {
         return view('default.index')->with(['title'=>'Application']);

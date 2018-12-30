@@ -3,7 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-
+use App\Helpers\LangHelper;
+use App;
 
 class LangServiceProvider extends ServiceProvider
 {
@@ -26,5 +27,11 @@ class LangServiceProvider extends ServiceProvider
     {
         // РЕгистрируем наш фпал для работы с локалью и языками
         require_once app_path() . '/Helpers/LangHelper.php';
+
+        $this->app->singleton(\App\Helpers\LangHelper::class, function ($app) {
+            return new \App\Helpers\LangHelper;
+        });
+
+        //$this->app->bind('LangHelper', \App\Helpers\LangHelper::class);
     }
 }

@@ -9,78 +9,66 @@ use Session;
 
 class LangHelper {
 
-    // Текущий установленный язык приложения
-   // static $currentAppLang;
+    // Инстанс
+    private static $_instance = null;
+    // Ограничиваем реализацию создания объекта
+    private function __construct() {}
+    // Ограничивает клонирование объекта
+    private function __clone() {}
 
+    private function __wakeup () {}
+
+    // Получение единственного экземпляра
+    static public function getInstance() {
+        if(is_null(self::$_instance))
+        {
+            self::$_instance = new self();
+        }
+        return self::$_instance;
+    }
+
+    // Получение установленной локали приложения
     public static function getAppLocale() {
-       // self::currentAppLang = App::getLocale();
-       // return self::currentAppLang;
-
+        // Врзвращаем локаль языка
         return App::getLocale();
     }
 
-    public static function getAllLangs() {
+    // Установка локали приложения
+    public static function setAppLocale($locale) {
+        // Врзвращаем локаль языка
+        App::setLocale($locale);
+    }
+
+    // Проверка лоступных языковых локалей
+    public static function checkAvailableLocale($locale) {
+        // Получаем языки доступные из базы
+        $langsIdent = LangModel::getLangsFromCache()->pluck('identif')->toArray();
+        // Если в массиве есть доступные идентификаторы локали
+        if (in_array($locale, $langsIdent)){
+            // Возвращаем пользовательскую локаль
+            return $locale;
+        }
+        else {
+            // Возвращаем локаль приложения
+            return App::getLocale();
+        }
+    }
+
+    // Получение всех языклв из базы
+    public static function getAllAppLangs() {
         return LangModel::getLangsFromCache();
     }
 
-    public static function getLangsIdentif() {
-        $all = LangModel::getLangsFromCache()->pluck('identif');
-        return $all;
-    }
-
     // Установка локали языка
-    public static function setCurrentLang() {
-            $locale = Request::segment(1);
-        // Если в сессии оказалось пусто
-      //  else {
-            // Проверяем есть ли передаваемая локаль в доступных локалях приложения, если есть
-            if (in_array($locale, LangHelper::getLangsIdentif()->toArray())) {
-                // Устанавливае текущую локаль приложения
-                App::setLocale($locale);
-                // Записываем локаль в сессию пользователя
-                session(['language' => $locale]);
-              //  Session::put('language', 'en');
-                // И возвращаем саму локаль
-                return $locale;
-            // Если парамметр локали не соответствует
-            } else {
-                // Если есть в сессии ключ с языковым парамметром
-              //  if (Session::has('language')) {
-                    // Значит уже установлена локаль языка
-                    $currentLocale =  App::getLocale();//session('language');
-                    // Просто возвращаем текущию локадь
-                    return $currentLocale;
-               //     dump($currentLocale);
-             //   }
-
-            }
-      //  }
+    public function setLangLocale($locale) {
+        if (Session::has('locale')) {
+            Session::get('locale');
+        }
+        else {
+            Session::set('locale', $locale);
+        }
+        return $locale;
     }
 
-
-   // public function setLanguage
-
-    /**
-     * Получение из базы всех языков сайта
-     * @access public
-     * @param bool $active
-     * @return array
-     */
-    public function getCMSLangs($active = FALSE) {
-        if (self::$language[(int) $active]) {
-            return self::$language[(int) $active];
-        }
-        if ($active) {
-            $this->db->where('active', 1);
-        }
-        $query = $this->db->get('languages');
-        if ($query) {
-            $query = $query->result_array();
-            self::$language[(int) $active] = $query;
-        } else {
-            show_error($this->db->_error_message());
-        }
-        return $query;
-    }
 
 }
